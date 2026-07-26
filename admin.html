@@ -43,5 +43,40 @@ font-size:18px;
 
 <button>Add Movie</button>
 
-</body>
+</body><script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDrPx2Am0xbAqXbwLFAte5EPUSgldz-Vow",
+  authDomain: "family-studio-bfafa.firebaseapp.com",
+  projectId: "family-studio-bfafa",
+  storageBucket: "family-studio-bfafa.firebasestorage.app",
+  messagingSenderId: "10850848181",
+  appId: "1:10850848181:web:73b0f52fe26b6784ec1dfc",
+  measurementId: "G-XKXBSTME05"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+document.querySelector("button").onclick = async () => {
+
+  const title = document.getElementById("title").value;
+  const image = document.getElementById("image").value;
+  const video = document.getElementById("video").value;
+  const description = document.getElementById("desc").value;
+
+  await addDoc(collection(db, "movies"), {
+    title,
+    image,
+    video,
+    description
+  });
+
+  alert("Movie added successfully!");
+};
+
+</script>
 </html>
