@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAMILY STUDIO</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+header{
+    background:#d40000;
+    padding:18px;
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    background:#222;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.hero{
+    text-align:center;
+    padding:70px 20px;
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+button{
+    background:#d40000;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:30px;
+    font-size:18px;
+}
+
+.movies{
+    padding:20px;
+}
+
+.card{
+    background:#222;
+    padding:20px;
+    border-radius:10px;
+    margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>🎬 FAMILY STUDIO</header>
+
+<nav>
+  <div style="text-align:center;padding:20px;">
+  <input
+    type="text"
+    id="search"
+    placeholder="Search movies..."
+    style="width:80%;max-width:400px;padding:12px;border-radius:20px;border:none;">
+</div>
+<a href="#">Home</a>
+<a href="#">Movies</a>
+<a href="#">Series</a>
+<a href="#">Login</a>
+</nav>
+
+<div class="hero">
+<h1>Watch Amazing Movies</h1>
+<p>Enjoy your favorite movies anytime.</p>
+
+<button>Watch Now</button>
+</div>
+
+<div class="movies">
+<h2>Featured Movies</h2>
+<div class="card">
+<h3>Fast & Furious</h3>
+<p>Action • 2023</p>
+<button>Watch</button>
+</div>
+<div class="card">
+    <img src="https://picsum.photos/300/450?random=1" width="100%">
+    <h3>Fast & Furious</h3>
+    <p>Action • 2023</p>
+    <button onclick="window.location.href='watch.html'">
+        Watch
+    </button>
+</div>
+
+<div class="card">
+<h3>Black Panther</h3>
+<p>Action • Marvel</p>
+<button>Watch</button>
+</div>
+
+<div class="card">
+<h3>John Wick</h3>
+<p>Action • Thriller</p>
+<button onclick="window.location.href='watch.html'">
+  Watch
+</button>
+</div>
+<div class="card">
+🎥 Movie 1
+</div>
+
+<div class="card">
+🎥 Movie 2
+</div>
+
+<div class="card">
+🎥 Movie 3
+</div>
+
+</div>
+
+</body>
+<footer style="background:#222;color:white;text-align:center;padding:20px;margin-top:30px;">
+  <p>© 2026 FAMILY STUDIO. All Rights Reserved.</p>
+</footer>
+</html>
