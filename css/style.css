@@ -87,3 +87,44 @@ padding:10px 20px;
 border-radius:30px;
 cursor:pointer;
 }
+.hero{
+height:420px;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1400&q=80");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content{
+max-width:700px;
+}
+
+.hero-content h2{
+font-size:45px;
+margin-bottom:15px;
+}
+
+.hero-content p{
+font-size:18px;
+margin-bottom:25px;
+line-height:1.6;
+}
+
+.watch-btn{
+background:#e50914;
+color:white;
+border:none;
+padding:15px 35px;
+font-size:18px;
+border-radius:40px;
+cursor:pointer;
+}
+
+.watch-btn:hover{
+background:#b20710;
+  }
