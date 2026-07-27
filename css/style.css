@@ -128,3 +128,32 @@ cursor:pointer;
 .watch-btn:hover{
 background:#b20710;
   }
+.categories{
+padding:30px 20px;
+text-align:center;
+}
+
+.categories h2{
+margin-bottom:20px;
+}
+
+.category-list{
+display:flex;
+gap:10px;
+overflow-x:auto;
+padding-bottom:10px;
+}
+
+.category-list button{
+background:#222;
+color:white;
+border:1px solid #444;
+padding:12px 20px;
+border-radius:30px;
+white-space:nowrap;
+cursor:pointer;
+}
+
+.category-list button:hover{
+background:#e50914;
+  }
