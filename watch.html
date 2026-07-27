@@ -1,41 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Watch Movie - FAMILY STUDIO</title>
+<title>Watch Movie</title>
 
 <style>
 body{
-    margin:0;
-    background:#111;
-    color:white;
-    font-family:Arial,sans-serif;
-    text-align:center;
-}
-
-header{
-    background:#d40000;
-    padding:20px;
-    font-size:28px;
-    font-weight:bold;
+margin:0;
+background:#000;
+color:white;
+font-family:Arial,sans-serif;
+text-align:center;
 }
 
 video{
-    width:90%;
-    max-width:800px;
-    margin-top:30px;
-    border-radius:10px;
+width:100%;
+max-width:900px;
+margin-top:20px;
 }
 
 a{
-    display:inline-block;
-    margin:20px;
-    color:white;
-    text-decoration:none;
-    background:#d40000;
-    padding:12px 25px;
-    border-radius:8px;
+display:inline-block;
+margin:20px;
+padding:12px 25px;
+background:red;
+color:white;
+text-decoration:none;
+border-radius:5px;
 }
 </style>
 
@@ -43,18 +35,22 @@ a{
 
 <body>
 
-<header>🎬 FAMILY STUDIO</header>
+<h1>🎬 Watch Movie</h1>
 
-<h2>Watch Movie</h2>
-
-<video controls>
-    <source src="movie.mp4" type="video/mp4">
-    Your browser does not support video.
-</video>
+<video id="player" controls></video>
 
 <br>
 
-<a href="index.html">⬅ Back Home</a>
+<a id="download" download>⬇ Download Movie</a>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const video = params.get("video");
+
+document.getElementById("player").src = video;
+document.getElementById("download").href = video;
+</script>
 
 </body>
 </html>
