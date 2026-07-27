@@ -62,3 +62,28 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:20px;
 }
+.movie-card{
+background:#1b1b1b;
+padding:15px;
+border-radius:10px;
+text-align:center;
+}
+
+.movie-card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.movie-card h3{
+margin-bottom:10px;
+}
+
+.movie-card button{
+background:red;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:30px;
+cursor:pointer;
+}
