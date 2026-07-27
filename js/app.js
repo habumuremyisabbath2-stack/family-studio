@@ -1,79 +1,53 @@
-const movies = [
-{
-title:"Rocky Saga",
-image:"https://via.placeholder.com/250x350?text=Rocky+Saga"
-},
-{
-title:"Fast X",
-image:"https://via.placeholder.com/250x350?text=Fast+X"
-},
-{
-title:"John Wick",
-image:"https://via.placeholder.com/250x350?text=John+Wick"
-}
-];
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+getFirestore,
+collection,
+getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-const container = document.getElementById("movies");
+const firebaseConfig = {
+apiKey: "AIzaSyDrPx2Am0xbAqXbwLFAte5EPUSgldz-Vow",
+authDomain: "family-studio-bfafa.firebaseapp.com",
+projectId: "family-studio-bfafa",
+storageBucket: "family-studio-bfafa.firebasestorage.app",
+messagingSenderId: "10850848181",
+appId: "1:10850848181:web:73b0f52fe26b6784ec1dfc",
+measurementId: "G-XKXBSTME05"
+};
 
-movies.forEach(movie=>{
-container.innerHTML += `
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const moviesDiv = document.getElementById("movies");
+
+async function loadMovies(){
+
+const snapshot = await getDocs(collection(db,"movies"));
+
+moviesDiv.innerHTML="";
+
+snapshot.forEach(doc=>{
+
+const movie=doc.data();
+
+moviesDiv.innerHTML += `
 <div class="movie-card">
+
 <img src="${movie.image}" alt="${movie.title}">
+
 <h3>${movie.title}</h3>
-<a href="watch.html">
-<button>Watch Now</button>
+
+<p>${movie.description}</p>
+
+<a href="watch.html?video=${encodeURIComponent(movie.video)}">
+<button>Watch Movie</button>
 </a>
+
 </div>
 `;
+
 });
-const trending = [
-{
-title:"Avatar",
-image:"https://via.placeholder.com/300x450?text=Avatar"
-},
-{
-title:"John Wick",
-image:"https://via.placeholder.com/300x450?text=John+Wick"
-},
-{
-title:"Fast X",
-image:"https://via.placeholder.com/300x450?text=Fast+X"
-},
-{
-title:"Black Panther",
-image:"https://via.placeholder.com/300x450?text=Black+Panther"
-}
-];
 
-const trendingContainer = document.getElementById("trendingMovies");
-
-trending.forEach(movie=>{
-trendingContainer.innerHTML += `
-<div class="trending-card">
-<img src="${movie.image}" alt="${movie.title}">
-<h3>${movie.title}</h3>
-<button onclick="location.href='watch.html'">Watch</button>
-</div>
-`;
-});
-const searchInput = document.querySelector(".hero input");
-
-searchInput.addEventListener("keyup", () => {
-
-const value = searchInput.value.toLowerCase();
-
-const cards = document.querySelectorAll(".movie-card");
-
-cards.forEach(card => {
-
-const title = card.querySelector("h3").textContent.toLowerCase();
-
-if(title.includes(value)){
-card.style.display="block";
-}else{
-card.style.display="none";
 }
 
-});
-
-});
+loadMovies();
