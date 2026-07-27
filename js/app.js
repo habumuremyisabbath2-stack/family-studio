@@ -26,3 +26,33 @@ container.innerHTML += `
 </div>
 `;
 });
+const trending = [
+{
+title:"Avatar",
+image:"https://via.placeholder.com/300x450?text=Avatar"
+},
+{
+title:"John Wick",
+image:"https://via.placeholder.com/300x450?text=John+Wick"
+},
+{
+title:"Fast X",
+image:"https://via.placeholder.com/300x450?text=Fast+X"
+},
+{
+title:"Black Panther",
+image:"https://via.placeholder.com/300x450?text=Black+Panther"
+}
+];
+
+const trendingContainer = document.getElementById("trendingMovies");
+
+trending.forEach(movie=>{
+trendingContainer.innerHTML += `
+<div class="trending-card">
+<img src="${movie.image}" alt="${movie.title}">
+<h3>${movie.title}</h3>
+<button onclick="location.href='watch.html'">Watch</button>
+</div>
+`;
+});
